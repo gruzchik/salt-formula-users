@@ -1,11 +1,11 @@
 users:
-  user1:
-    name: redhat
+  canonical:
+    name: canonical
     fullname: Robert Hernandez
     uid: 5000
     gid: 5000
     shell: /bin/bash
-    home: /home/user1
+    home: /home/caninical
     groups:
       - wheel
       - admin
