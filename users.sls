@@ -5,13 +5,15 @@
     - uid: {{ salt['pillar.get']('user:uid') }}
     - gid: {{ salt['pillar.get']('user:gid') }}
     - home: {{ salt['pillar.get']('user:home') }}
-
+{% if 'groups' in args %}
+    - groups: {{ args['groups'] }}
+{% endif %}
 
 {% if 'key.pub' in args and args['key.pub'] == True %}
 {{ user }}_key.pub:
   ssh_auth:
     - present
     - user: {{ user }}
-    - source: salt://users/{{ user }}/keys/key.pub
+    - source: salt://tests/{{ user }}.pub
 {% endif %}
 {% endfor %}

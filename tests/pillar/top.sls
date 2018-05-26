@@ -5,4 +5,4 @@
 
 base:
   '*':
-    - {{ this.newuser }}
+    - users/{{ this.newuser }}
