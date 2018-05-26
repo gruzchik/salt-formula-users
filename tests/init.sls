@@ -1,4 +1,10 @@
 {% for user, args in pillar['users'].iteritems() %}
+{% for group in args['groups'] %}
+{{ group }}:
+  group.present:
+    - name: {{ group }}
+{% endfor %}
+
 {{ user }}:
   user.present:
     - name: {{ salt['pillar.get']('user:name') }}
@@ -15,5 +21,15 @@
     - present
     - user: {{ user }}
     - source: salt://tests/{{ user }}.pub
+{% endif %}
+{% endfor %}
+
+{% for absuser, args in pillar['absent_users'].iteritems() %}
+{% set all_users = salt['user.list_users']() %}
+{% if absuser in all_users %}
+{{ absuser }}:
+  user.absent:
+    - purge: True
+    - force: True
 {% endif %}
 {% endfor %}

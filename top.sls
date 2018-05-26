@@ -1,3 +1,3 @@
 base:
-  'minion-ubuntu':
-    - users
+  '*':
+    - tests
