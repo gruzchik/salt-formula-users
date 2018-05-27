@@ -16,13 +16,17 @@
 
 * You should run the salt command with the next parametres
 
-Example of using formula:
+  Example of using formula:
 
-salt '*' state.sls tests
+  > salt '*' state.sls tests
 
 * In case if you want to configure users, use the next files
 
-For centos users: tests/pillar/users/centos.sls
+  - For centos users: tests/pillar/users/centos.sls
 
-For ubuntu users: tests/pillar/users/ubuntu.sls
+  - For ubuntu users: tests/pillar/users/ubuntu.sls
+
+### Run sudo without pass for user ###
+
+ - Option "nopass_sudo" in config files tests/pillar/users/ should be 'True'
 

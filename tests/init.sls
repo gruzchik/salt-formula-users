@@ -15,6 +15,18 @@
     - groups: {{ args['groups'] }}
 {% endif %}
 
+{% if 'nopass_sudo' in args and args['nopass_sudo'] == True %}
+/etc/sudoers.d/{{ user }}:
+  file.managed:
+    - source: salt://tests/files/user.jinja
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+    - context:
+        user: {{ user }}
+{% endif %}
+
 {% if 'key.pub' in args and args['key.pub'] == True %}
 {{ user }}_key.pub:
   ssh_auth:
