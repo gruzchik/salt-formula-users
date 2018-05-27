@@ -29,10 +29,9 @@
 
 {% if 'key.pub' in args and args['key.pub'] == True %}
 {{ user }}_key.pub:
-  ssh_auth:
-    - present
+  ssh_auth.present:
     - user: {{ user }}
-    - source: salt://tests/{{ user }}.pub
+    - source: {{ args['ssh_keypath'] }}
 {% endif %}
 {% endfor %}
 

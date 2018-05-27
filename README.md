@@ -26,7 +26,13 @@
 
   - For ubuntu users: tests/pillar/users/ubuntu.sls
 
-#### How to run sudo without pass for user ####
+#### Run sudo without pass for user ####
 
  - Option **nopass_sudo** in config files tests/pillar/users/ should be **True**
+
+#### Add ssh key for user on minion ####
+
+ -  Rewrite ssh public key to the file that contain Option **ssh_keypath** in config files tests/pillar/users/ (default files are salt://tests/ubuntu.pem and salt://tests/centos.pem)
+
+ - Option **key.pub** have to be **True**
 
