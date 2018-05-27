@@ -6,11 +6,15 @@
 {% endfor %}
 
 {{ user }}:
+  group.present:
+    - gid: {{ args['gid'] }}
   user.present:
-    - name: {{ salt['pillar.get']('user:name') }}
-    - uid: {{ salt['pillar.get']('user:uid') }}
-    - gid: {{ salt['pillar.get']('user:gid') }}
-    - home: {{ salt['pillar.get']('user:home') }}
+    - name: {{ args['name'] }}
+    - fullname: {{ args['fullname'] }}
+    - uid: {{ args['uid'] }}
+    - gid: {{ args['gid'] }}
+    - home: {{ args['home'] }}
+    - shell: {{ args['shell'] }}
 {% if 'groups' in args %}
     - groups: {{ args['groups'] }}
 {% endif %}
