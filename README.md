@@ -23,5 +23,6 @@ salt '*' state.sls tests
 * In case if you want to configure users, use the next files
 
 For centos users: tests/pillar/users/centos.sls
+
 For ubuntu users: tests/pillar/users/ubuntu.sls
 

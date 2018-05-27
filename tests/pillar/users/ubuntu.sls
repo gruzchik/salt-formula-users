@@ -5,7 +5,7 @@ users:
     uid: 5000
     gid: 5000
     shell: /bin/bash
-    home: /home/caninical
+    home: /home/canonical
     groups:
       - wheel
       - admin
