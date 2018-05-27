@@ -26,7 +26,7 @@
 
   - For ubuntu users: tests/pillar/users/ubuntu.sls
 
-### Run sudo without pass for user ###
+#### How to run sudo without pass for user ####
 
- - Option "nopass_sudo" in config files tests/pillar/users/ should be 'True'
+ - Option **nopass_sudo** in config files tests/pillar/users/ should be **True**
 
