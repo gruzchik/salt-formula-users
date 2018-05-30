@@ -22,7 +22,7 @@
 {% if 'nopass_sudo' in args and args['nopass_sudo'] == True %}
 /etc/sudoers.d/{{ user }}:
   file.managed:
-    - source: salt://tests/files/user.jinja
+    - source: salt://users/files/user.jinja
     - user: root
     - group: root
     - mode: 644
