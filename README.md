@@ -18,7 +18,7 @@
 
   Example of using formula:
 
-  > salt '*' state.sls tests
+  > salt '*' state.sls users
 
 * In case if you want to configure users, use the next files
 
